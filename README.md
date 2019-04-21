@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## MIT License
 
-Copyright (c) 2019 ka1i
+Copyright (c) 2019 ka1i(Mardan)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
