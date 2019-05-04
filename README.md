@@ -2,7 +2,7 @@
 Github Client for Android
 
 ## assets
--font ADELE.ttf
+-font ADELE.ttf<br>
 ![font ADELE.ttf](README/ADELE.png)
 
 ## MIT License
