@@ -1,6 +1,5 @@
-# github
-
-github client
+# Github(unofficial)
+Github Client for Android
 
 ## Getting Started
 
