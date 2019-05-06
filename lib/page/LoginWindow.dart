@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'package:Github/common/utils/color_loader.dart';
 
+
 class LoginWindow extends StatefulWidget {
   const LoginWindow({Key key}) :super(key: key);
   @override
@@ -53,36 +54,29 @@ class LoginWindowState extends State<LoginWindow> with TickerProviderStateMixin{
     return new Container(
       padding: const EdgeInsets.all(0.0),
       decoration: new BoxDecoration(
-        image: new DecorationImage(image: new ExactAssetImage('assets/image/login_background.jpg'),fit: BoxFit.cover),
+        color: Colors.black,
       ),
-      child: new Container(
-        decoration: BoxDecoration(
-          gradient: new LinearGradient(
-              colors: <Color>[
-                const Color.fromRGBO(162, 146, 199, 0.6),
-                const Color.fromRGBO(51, 51, 51, 0.8),
-              ],
-              stops: [0.2, 1.0],
-              begin: const FractionalOffset(0.0, 0.0),
-              end: const FractionalOffset(0.0, 1.0)
+      child: new ListView(
+        padding: const EdgeInsets.all(5.0),
+        children: <Widget>[
+          new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new _UserAvatar(userAvatar: 'assets/image/Avatar.png',),
+              new _LoginGroupForm(),
+              new _LoginGithub(),
+              new Offstage(offstage: true,
+                child: new ColorLoader(
+                  colors: colors,
+                  duration: Duration(
+                      milliseconds: 1200),
+                ),
+              ),
+              new _RegisterAccount(),
+              new _AssistantCopyRight(copyrightSize: 9,),
+            ],
           ),
-        ),
-        child: new ListView(
-          padding: const EdgeInsets.all(5.0),
-          children: <Widget>[
-            new Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                new _UserAvatar(userAvatar: 'assets/image/main_avatar.jpg',),
-                new _LoginGroupForm(),
-                new _LoginGithub(),
-                new Offstage(offstage: true,child: new ColorLoader(colors: colors,duration: Duration(milliseconds: 1200),),),
-                new _RegisterAccount(),
-                new _AssistantCopyRight(copyrightSize: 9,),
-              ],
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }
@@ -95,7 +89,7 @@ class _UserAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (new Padding(
-      padding: const EdgeInsets.only(top: 80.0,bottom: 30.0),
+      padding: const EdgeInsets.only(top: 60.0),
       child: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
@@ -103,9 +97,22 @@ class _UserAvatar extends StatelessWidget {
           new Container(
             child: new CircleAvatar(
               backgroundImage: AssetImage(userAvatar),
-              radius: 50.0,
+              backgroundColor: Colors.transparent,
+              radius: 40.0,
             ),
-          )
+          ),
+          new SizedBox(
+            height: 10,
+          ),
+          new Text(
+            "Sign in to GitHub",
+            style: new TextStyle(
+              fontFamily: "ADELE",
+              fontSize: 22.0,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
         ],
       ),
     ));
@@ -132,6 +139,7 @@ class _InputFieldArea extends StatelessWidget {
         obscureText: obscure,
         style: const TextStyle(
           fontFamily: 'ADELE',
+          fontWeight: FontWeight.w500,
           color: Colors.white,
         ),
         decoration: new InputDecoration(
@@ -141,9 +149,9 @@ class _InputFieldArea extends StatelessWidget {
           ),
           border: InputBorder.none,
           hintText: hint,
-          hintStyle: const TextStyle(color: Colors.white, fontSize: 15.0),
+          hintStyle: const TextStyle(color: Colors.white, fontSize: 14.0),
           contentPadding: const EdgeInsets.only(
-              top: 30.0, right: 30.0, bottom: 30.0, left: 5.0),
+              top: 40.0, right: 30.0, bottom: 30.0, left: 3.0),
         ),
       ),
     ));
@@ -162,7 +170,7 @@ class _LoginGroupForm extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 new _InputFieldArea(
-                  hint: "Emall Address",
+                  hint: "Username or email address",
                   obscure: false,
                   icon: Icons.person_outline,
                 ),
@@ -191,14 +199,15 @@ class _LoginGithub extends StatelessWidget {
         width: 320.0,
         height: 60.0,
         child: new RaisedButton(
-          color: const Color.fromRGBO(247, 64, 106, 1.0),
+          //color: const Color.fromRGBO(247, 64, 106, 1.0),
+          color: Color.fromRGBO(81, 81, 81, 1.0),
           child: new Text(
-            'Login',
+            'Sign in',
             style: new TextStyle(
               color: Colors.white,
               fontFamily: 'ADELE',
               fontSize: 22.0,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w800,
               letterSpacing: 0.9,
             ),
           ),
@@ -208,7 +217,7 @@ class _LoginGithub extends StatelessWidget {
           },
           shape: StadiumBorder(),
           elevation: 24,
-          splashColor: Colors.blueGrey,
+          splashColor: Colors.black,
         ),
       ),
     );
@@ -216,24 +225,30 @@ class _LoginGithub extends StatelessWidget {
 }
 
 class _RegisterAccount extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return (new Container(
       child: new FlatButton(
         padding: const EdgeInsets.only(top: 90),
         onPressed: null,
-        child: new Text(
-          "Don't have an account? \nRegistered in Github",
-          textAlign: TextAlign.center,
-          overflow: TextOverflow.ellipsis,
-          softWrap: true,
-          style: new TextStyle(
-              fontWeight: FontWeight.w300,
-              fontFamily: 'ADELE',
-              letterSpacing: 0.5,
-              color: Colors.white,
-              fontSize: 12.0),
-        ),
+        child: new Column(
+          children: <Widget>[
+            new Text(
+              "Don't have an account?\nRegistered in Github",
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              softWrap: true,
+              style: new TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'ADELE',
+                  letterSpacing: 0.5,
+                  color: Colors.white,
+                  fontSize: 13.0
+              ),
+            ),
+          ],
+        )
       ),
     ));
   }
@@ -251,7 +266,7 @@ class _AssistantCopyRight extends StatelessWidget{
         padding: const EdgeInsets.only(top: 35),
         onPressed: null,
         child: new Text(
-          "Power by UESTC.Mardan & \nCopyright © 2017 - 2021 Mardan. All Rights Reserved.",
+          "Power by UESTC-2017.1101.Mardan & \nCopyright © 2017 - 2021 Mardan. All Rights Reserved.",
           textAlign: TextAlign.center,
           overflow: TextOverflow.ellipsis,
           softWrap: true,
