@@ -111,7 +111,7 @@ class _MainWindowState extends State<MainWindow> with SingleTickerProviderStateM
             new Scaffold(
               appBar: new PreferredSize(
                   child: new AppBar(
-                    title: new Text("Mardan Assistant",style: new TextStyle(fontFamily: 'ADELE',),),
+                    title: new Text("Mardan Assistant\nGithub",textAlign: TextAlign.center,softWrap: true,style: new TextStyle(fontFamily: 'ADELE',),),
                     centerTitle: true,
                     backgroundColor: Color.fromRGBO(84, 84, 84, 0.0),
                     elevation: 24.0,
@@ -274,7 +274,7 @@ class _MainWindowState extends State<MainWindow> with SingleTickerProviderStateM
                                   new _FollwingList(
                                     title: "Yoga classes with Emily33",
                                     subtitle: "要不吃烧烤去吧",
-                                    image: 'assets/image/backup/car.jpg',
+                                    image: 'assets/image/Avatar.png',
                                     username: "Mardan",
                                     star: 11,
                                     res: 28,
@@ -283,7 +283,7 @@ class _MainWindowState extends State<MainWindow> with SingleTickerProviderStateM
                                   new _FollwingList(
                                     title: "Breakfast with Harry",
                                     subtitle: "9 - 10am ",
-                                    image: 'assets/image/backup/cat.jpg',
+                                    image: 'assets/image/Avatar.png',
                                     username: "Mardan",
                                     star: 11,
                                     res: 28,
@@ -292,38 +292,11 @@ class _MainWindowState extends State<MainWindow> with SingleTickerProviderStateM
                                   new _FollwingList(
                                     title: "Yoga classes with Emily33",
                                     subtitle: "7 - 8am Workout",
-                                    image: 'assets/image/backup/car.jpg',
+                                    image: 'assets/image/Avatar.png',
                                     username: "Mardan",
                                     star: 11,
                                     res: 28,
                                     code: 'python',
-                                  ),
-                                  new _FollwingList(
-                                    title: "Breakfast with Harry",
-                                    subtitle: "9 - 10am ",
-                                    image: 'assets/image/backup/cat.jpg',
-                                    username: "Mardan",
-                                    star: 11,
-                                    res: 28,
-                                    code: 'dart',
-                                  ),
-                                  new _FollwingList(
-                                    title: "Yoga classes with Emily33",
-                                    subtitle: "7 - 8am Workout",
-                                    image: 'assets/image/backup/car.jpg',
-                                    username: "Mardan",
-                                    star: 11,
-                                    res: 28,
-                                    code: 'java',
-                                  ),
-                                  new _FollwingList(
-                                    title: "Breakfast with Harry",
-                                    subtitle: "9 - 10am ",
-                                    image: 'assets/image/backup/cat.jpg',
-                                    username: "Mardan",
-                                    star: 11,
-                                    res: 28,
-                                    code: 'Swift',
                                   ),
                                 ],
                               ),
