@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:github/common/avatarHeader.dart';
-import 'package:github/common/sidebar.dart';
+import 'package:Github/common/avatarHeader.dart';
+import 'package:Github/common/sidebar.dart';
 
 import 'dart:ui';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'package:github/page/LoginWindow.dart';
-import 'package:github/page/MainWindow.dart';
+import 'package:Github/page/LoginWindow.dart';
+import 'package:Github/page/MainWindow.dart';
 
 
 void main(){

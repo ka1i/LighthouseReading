@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:github/common/utils/color_loader.dart';
+import 'package:Github/common/utils/color_loader.dart';
 
 class LoginWindow extends StatefulWidget {
   const LoginWindow({Key key}) :super(key: key);

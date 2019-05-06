@@ -1,4 +1,4 @@
-package com.mardan.uestc.github;
+package com.mardan.uestc20171101.github;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
