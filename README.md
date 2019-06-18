@@ -1,5 +1,5 @@
-# Github(unofficial)
-Github Client for Android
+## 灯塔阅读
+- 软件配置
 
 ## assets
 - font ADELE.ttf<br>
